@@ -11,7 +11,7 @@
 
 <br>
 
-[![Autor](https://img.shields.io/badge/Autor-Christopher%20Espinoza-blue?style=flat-square)](mailto:c.espinoza@ejemplo.com)
+[![Autor](https://img.shields.io/badge/Autor-Christopher%20Espinoza-blue?style=flat-square)](mailto:c.espinoza@nuevacumbre.cl)
 [![Repositorio](https://img.shields.io/badge/GitHub-nuevacumbre%2Fsimulador--bursatil-181717?style=flat-square&logo=github)](https://github.com/nuevacumbre/simulador-bursatil)
 [![Licencia](https://img.shields.io/badge/Licencia-MIT-green?style=flat-square)]()
 
@@ -21,17 +21,17 @@
 
 ## 📋 **Tabla de Contenidos**
 
-1. [**🎯 Objetivo del Proyecto**](#-objetivo-del-proyecto)
-2. [**✨ Características Principales**](#-características-principales)
-3. [**🏗️ Arquitectura del Proyecto**](#️-arquitectura-del-proyecto)
-4. [**🛠️ Stack Tecnológico**](#️-stack-tecnológico)
-5. [**⚙️ Configuración Inicial (Paso a Paso)**](#️-configuración-inicial-paso-a-paso)
-6. [**🔐 Seguridad: Variables de Entorno**](#-seguridad-variables-de-entorno)
-7. [**🛡️ Buenas Prácticas de Ciberseguridad**](#️-buenas-prácticas-de-ciberseguridad)
-8. [**📊 Obtención de Datos Reales (Yahoo Finance)**](#-obtención-de-datos-reales-yahoo-finance)
-9. [**🚀 Despliegue en Producción**](#-despliegue-en-producción)
-10. [**👨‍🏫 Autor y Contacto**](#-autor-y-contacto)
-11. [**📄 Licencia**](#-licencia)
+1. [🎯 Objetivo del Proyecto](#-objetivo-del-proyecto)
+2. [✨ Características Principales](#-características-principales)
+3. [🏗️ Arquitectura del Proyecto](#️-arquitectura-del-proyecto)
+4. [🛠️ Stack Tecnológico](#️-stack-tecnológico)
+5. [⚙️ Configuración Inicial (Paso a Paso)](#️-configuración-inicial-paso-a-paso)
+6. [🔐 Seguridad: Variables de Entorno](#-seguridad-variables-de-entorno)
+7. [🛡️ Buenas Prácticas de Ciberseguridad](#️-buenas-prácticas-de-ciberseguridad)
+8. [📊 Obtención de Datos Reales (Yahoo Finance)](#-obtención-de-datos-reales-yahoo-finance)
+9. [🚀 Despliegue en Producción](#-despliegue-en-producción)
+10. [👨‍🏫 Autor y Contacto](#-autor-y-contacto)
+11. [📄 Licencia](#-licencia)
 
 ---
 
@@ -63,66 +63,66 @@ La aplicación sigue una arquitectura limpia y por capas, separando claramente l
 
 ```mermaid
 graph TD
-    A[Usuario] --> B{<b>Vue Router</b><br/>Protección de Rutas};
-    B -- Ruta Pública --> C[Vistas<br/>Home, Login, Register];
-    B -- Ruta Privada --> D[Vista Dashboard];
+    A[Usuario] --> B{Vue Router<br/>Protección de Rutas}
+    B -- Ruta Pública --> C[Vistas<br/>Home, Login, Register]
+    B -- Ruta Privada --> D[Vista Dashboard]
 
-    C --> E[<b>Stores (Pinia)</b><br/>auth.js];
-    D --> E;
+    C --> E[Stores (Pinia)<br/>auth.js]
+    D --> E
 
-    E --> F[<b>Servicios (Services)</b>];
-    F --> G[Firebase Auth];
-    F --> H[Yahoo Finance API];
+    E --> F[Servicios (Services)]
+    F --> G[Firebase Auth]
+    F --> H[Yahoo Finance API]
 
-    E --> I[<b>Utilidades (Utils)</b><br/>sanitize.js];
-    I --> J[(DOMPurify)];
+    E --> I[Utilidades (Utils)<br/>sanitize.js]
+    I --> J[(DOMPurify)]
 
-    style B fill:#f9f,stroke:#333,stroke-width:2px;
-    style E fill:#ccf,stroke:#333,stroke-width:2px;
-    style F fill:#cfc,stroke:#333,stroke-width:2px;
-    style I fill:#fcf,stroke:#333,stroke-width:2px;
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style F fill:#cfc,stroke:#333,stroke-width:2px
+    style I fill:#fcf,stroke:#333,stroke-width:2px
 ```
 
 ### **Estructura de Carpetas**
 
 ```
 simulador-bursatil/
-├── 📁 .vscode/              # Configuración del editor
-├── 📁 node_modules/          # Dependencias (ignorado por git)
-├── 📁 public/                # Archivos públicos estáticos
-├── 📁 src/                   # Código fuente de la aplicación
-│   ├── 📁 assets/            # Recursos estáticos (imágenes, estilos globales)
-│   ├── 📁 components/        # Componentes reutilizables (opcional)
-│   ├── 📁 config/            # Archivos de configuración (constantes, etc.)
+├── 📁 .vscode/                  # Configuración del editor
+├── 📁 node_modules/              # Dependencias (ignorado por git)
+├── 📁 public/                    # Archivos públicos estáticos
+├── 📁 src/                       # Código fuente de la aplicación
+│   ├── 📁 assets/                # Recursos estáticos (imágenes, estilos globales)
+│   ├── 📁 components/            # Componentes reutilizables (opcional)
+│   ├── 📁 config/                # Archivos de configuración (constantes, etc.)
 │   │   └── constants.js
-│   ├── 📁 router/            # Configuración de las rutas
+│   ├── 📁 router/                # Configuración de las rutas
 │   │   └── index.js
-│   ├── 📁 services/          # Lógica de negocio y comunicación con APIs externas
+│   ├── 📁 services/              # Lógica de negocio y comunicación con APIs externas
 │   │   ├── firebase.js
 │   │   └── stockApi.js
-│   ├── 📁 stores/            # Estado global de la aplicación con Pinia
+│   ├── 📁 stores/                # Estado global de la aplicación con Pinia
 │   │   └── auth.js
-│   ├── 📁 utils/             # Funciones de utilidad y helpers
+│   ├── 📁 utils/                 # Funciones de utilidad y helpers
 │   │   └── sanitize.js
-│   ├── 📁 views/             # Componentes de las páginas (vistas del router)
+│   ├── 📁 views/                 # Componentes de las páginas (vistas del router)
 │   │   ├── HomePage.vue
 │   │   ├── LoginPage.vue
 │   │   ├── RegisterPage.vue
 │   │   └── Dashboard.vue
-│   ├── App.vue               # Componente raíz de la aplicación
-│   └── main.js               # Punto de entrada de la aplicación
-├── 📁 tests/                  # Archivos de prueba (opcional)
-├── .env                       # 🔴 NO SUBIR: Variables de entorno locales (reales)
-├── .env.example                # ✅ SUBIR: Ejemplo de variables de entorno
-├── .gitignore                  # Archivos y carpetas ignorados por git
-├── eslint.config.js            # Configuración de ESLint
-├── index.html                  # Archivo HTML principal
-├── jsconfig.json               # Configuración para el autocompletado de rutas
-├── package.json                # Dependencias y scripts del proyecto
-├── package-lock.json           # Versiones exactas de las dependencias
-├── README.md                   # 📄 Este archivo
-├── vite.config.js              # Configuración de Vite
-└── vitest.config.js            # Configuración de Vitest (pruebas)
+│   ├── App.vue                   # Componente raíz de la aplicación
+│   └── main.js                   # Punto de entrada de la aplicación
+├── 📁 tests/                      # Archivos de prueba (opcional)
+├── .env                           # 🔴 NO SUBIR: Variables de entorno locales (reales)
+├── .env.example                   # ✅ SUBIR: Ejemplo de variables de entorno
+├── .gitignore                     # Archivos y carpetas ignorados por git
+├── eslint.config.js               # Configuración de ESLint
+├── index.html                     # Archivo HTML principal
+├── jsconfig.json                  # Configuración para el autocompletado de rutas
+├── package.json                   # Dependencias y scripts del proyecto
+├── package-lock.json              # Versiones exactas de las dependencias
+├── README.md                      # 📄 Este archivo
+├── vite.config.js                 # Configuración de Vite
+└── vitest.config.js               # Configuración de Vitest (pruebas)
 ```
 
 ---
@@ -222,7 +222,7 @@ npm run dev
 Proteger las credenciales es un pilar fundamental. Así es como lo gestionamos:
 
 - **Archivo `.gitignore`:** El archivo `.gitignore` ya incluye `.env` para evitar que se suba accidentalmente al repositorio público.
-- **Archivo `.env.example`:** Se proporciona un archivo de ejemplo (`env.example`) para que otros desarrolladores sepan qué variables necesitan configurar, sin incluir los valores reales.
+- **Archivo `.env.example`:** Se proporciona un archivo de ejemplo (`.env.example`) para que otros desarrolladores sepan qué variables necesitan configurar, sin incluir los valores reales.
 - **Uso en Código:** En `src/services/firebase.js`, las credenciales se leen desde las variables de entorno usando `import.meta.env`.
 
   ```javascript
@@ -246,6 +246,7 @@ Se utiliza **DOMPurify** para limpiar cualquier dato introducido por el usuario,
 
 - **Helper `sanitize.js`:** Contiene funciones como `sanitizeInput()` que usan DOMPurify para limpiar strings.
 - **Uso en Stores:** Antes de enviar un email a Firebase para autenticación, se sanitiza.
+
   ```javascript
   // Fragmento de src/stores/auth.js
   import { sanitizeInput } from '@/utils/sanitize'
@@ -361,7 +362,7 @@ Este proyecto fue desarrollado por **Christopher Espinoza** como material didác
 
 ## 📄 **Licencia**
 
-Este proyecto está bajo la licencia **MIT**. Sientete libre de usarlo, modificarlo y distribuirlo para fines educativos y personales.
+Este proyecto está bajo la licencia **MIT**. Siéntete libre de usarlo, modificarlo y distribuirlo para fines educativos y personales.
 
 ---
 
@@ -372,53 +373,31 @@ Este proyecto está bajo la licencia **MIT**. Sientete libre de usarlo, modifica
   <code>Hecho con ❤️ por Christopher Espinoza para el mundo del código abierto.</code>
 </div>
 
-# simulador-bursatil
+---
 
-This template should help get you started developing with Vue 3 in Vite.
+## 🛠️ **Configuración del Proyecto (Recordatorio para Desarrollo)**
 
-## Recommended IDE Setup
+### **Configuración del IDE Recomendada**
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (y deshabilitar Vetur).
 
-## Recommended Browser Setup
+### **Navegador Recomendado**
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
+- Navegadores basados en Chromium (Chrome, Edge, Brave, etc.):
   - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
+  - [Activar "Custom Object Formatter" en Chrome DevTools](http://bit.ly/object-formatters)
 - Firefox:
   - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+  - [Activar "Custom Object Formatter" en Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
 
-## Customize configuration
+### **Comandos Útiles**
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+| Comando             | Descripción                                                             |
+| :------------------ | :---------------------------------------------------------------------- |
+| `npm install`       | Instala todas las dependencias del proyecto.                            |
+| `npm run dev`       | Inicia el servidor de desarrollo con recarga en caliente.               |
+| `npm run build`     | Compila y minifica la aplicación para producción en la carpeta `dist/`. |
+| `npm run test:unit` | Ejecuta las pruebas unitarias con Vitest.                               |
+| `npm run lint`      | Ejecuta el linter para corregir problemas de estilo de código.          |
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+---

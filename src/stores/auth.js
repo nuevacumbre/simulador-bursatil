@@ -96,14 +96,6 @@ export const useAuthStore = defineStore('auth', {
       }
     },
 
-    // Inicializar listener de autenticación
-    initAuthListener() {
-      onAuthStateChanged(auth, (user) => {
-        this.user = user
-        this.loading = false
-      })
-    },
-
     // Cerrar sesión
     async logout() {
       try {
