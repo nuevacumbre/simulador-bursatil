@@ -1,7 +1,3 @@
-¡Por supuesto, Christopher! Aquí tienes el archivo `README.md` final, completamente actualizado con todas las lecciones de nuestra larga conversación, las mejores prácticas de seguridad y la configuración de entorno que acabamos de definir. He incluido iconos, emojis y diagramas para hacerlo más atractivo y didáctico.
-
----
-
 # 📈 **Simulador Bursátil en Tiempo Real**
 
 ### _Una Aplicación Full-Stack con Vue.js, Firebase y la API de Yahoo Finance_
@@ -358,8 +354,8 @@ Este comando genera una carpeta `dist/` con todos los archivos estáticos optimi
 Este proyecto fue desarrollado por **Christopher Espinoza** como material didáctico para demostrar competencias avanzadas en desarrollo web.
 
 [![GitHub](https://img.shields.io/badge/GitHub-nuevacumbre-181717?style=for-the-badge&logo=github)](https://github.com/nuevacumbre)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?style=for-the-badge&logo=linkedin)](URL_DE_TU_PERFIL_DE_LINKEDIN) _(Reemplazar con tu URL de LinkedIn)_
-[![Correo](https://img.shields.io/badge/Email-contacto%40ejemplo.com-red?style=for-the-badge&logo=gmail)](mailto:c.espinoza@ejemplo.com) _(Reemplazar con tu email)_
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/christopher-espinoza-%C3%B3rdenes-1b2b274a/)
+[![Correo](https://img.shields.io/badge/Email-c.espinoza%40nuevacumbre.cl-red?style=for-the-badge&logo=gmail)](mailto:c.espinoza@nuevacumbre.cl)
 
 ---
 
